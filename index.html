@@ -413,30 +413,8 @@
       <p class="sub">Sem compromisso — é uma conversa de diagnóstico pra ver se faz sentido pros dois lados.</p>
     </div>
     <div class="form-card">
-      <form id="leadForm">
-        <label for="nome">Seu nome</label>
-        <input type="text" id="nome" placeholder="Como podemos te chamar" required>
-
-        <label for="instituicao">Nome da instituição</label>
-        <input type="text" id="instituicao" placeholder="Ex: Escola de Idiomas Horizonte" required>
-
-        <label for="segmento">Segmento</label>
-        <select id="segmento" required>
-          <option value="" disabled selected>Selecione</option>
-          <option>Escola de idiomas</option>
-          <option>Curso técnico livre</option>
-          <option>Autoescola</option>
-          <option>Escolinha esportiva</option>
-          <option>Reforço escolar</option>
-          <option>Outro</option>
-        </select>
-
-        <label for="whats">WhatsApp</label>
-        <input type="tel" id="whats" placeholder="(00) 00000-0000" required>
-
-        <button type="submit" class="btn">Falar com a AYO no WhatsApp</button>
-      </form>
-      <p class="form-note">Ao enviar, você será direcionado ao WhatsApp da AYO com os dados já preenchidos na mensagem.</p>
+      <iframe data-tally-src="https://tally.so/embed/ZjMjR0?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Leads AyO"></iframe>
+      <p class="form-note">Ao enviar, seus dados ficam salvos automaticamente e você é direcionado ao WhatsApp da AYO.</p>
     </div>
   </div>
 </section>
@@ -448,27 +426,7 @@
   </div>
 </footer>
 
-<script>
-document.getElementById('leadForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var nome = document.getElementById('nome').value.trim();
-  var instituicao = document.getElementById('instituicao').value.trim();
-  var segmento = document.getElementById('segmento').value;
-  var whats = document.getElementById('whats').value.trim();
-
-  if (!nome || !instituicao || !segmento || !whats) {
-    return;
-  }
-
-  // SUBSTITUA pelo número real de WhatsApp da AYO (formato: 55DDDNUMERO)
-  var numeroAYO = "5535984424440";
-  var mensagem = "Olá! Sou " + nome + ", da instituição " + instituicao +
-                 " (" + segmento + "). Vim pela página da AYO e quero saber mais sobre a captação de matrículas. Meu WhatsApp: " + whats;
-
-  var url = "https://wa.me/" + numeroAYO + "?text=" + encodeURIComponent(mensagem);
-  window.open(url, "_blank");
-});
-</script>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
 
 </body>
 </html>
