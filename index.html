@@ -463,8 +463,9 @@ window.addEventListener('message', function(event) {
     // Monta a mensagem do WhatsApp com as respostas do formulário
     var fields = (data.payload && data.payload.fields) || [];
     var partes = fields.map(function (f) {
-      var valor = Array.isArray(f.value) ? f.value.join(', ') : f.value;
-      return (f.label || '') + ': ' + valor;
+      var valor = f.answer ? f.answer.value : '';
+      if (Array.isArray(valor)) valor = valor.join(', ');
+      return (f.title || '') + ': ' + valor;
     });
     var mensagem = 'Olá! Vim pela página da AYO.\n' + partes.join('\n');
 
